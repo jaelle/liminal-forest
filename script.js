@@ -27,7 +27,7 @@ function rightarrow() {
         document.getElementById("item").style.background = "url('images/mushrooms.png') no-repeat"
         document.getElementById("item").style.width = "80px"
         document.getElementById("item").style.height = "80px"
-        document.getElementById("item").style.top = "200px"        
+        document.getElementById("item").style.top = "500px"        
         document.getElementById("item").style.left = "150px" 
         document.getElementById("item").style.display ="block"    
         document.getElementById("place").value ="river"
@@ -78,15 +78,15 @@ function chest() {
 
 function item() {
     if (document.getElementById('place').value =="clearing") {
-        addtoinventory(document.getElementById("item"),"diary")
+        addtoinventory(document.getElementById("contents"),"diary")
         
     }
     if (document.getElementById('place').value =="grove") {
-        addtoinventory(document.getElementById("item"),"emptybottle")
+        addtoinventory(document.getElementById("contents"),"emptybottle")
         
     }
     if (document.getElementById('place').value =="river") {
-        addtoinventory(document.getElementById("item"),"mushrooms")
+        addtoinventory(document.getElementById("contents"),"mushrooms")
         
     }
     document.getElementById("item").style.display ="none"
@@ -94,15 +94,14 @@ function item() {
 
 function addtoinventory(contents,item) {
     c = contents.value
-    if (c != "" && typeof c != 'undefined') {
+    if (c != '' && typeof c == 'string') {
         if ( c.split(",").length>0) {
-            c.append("," + item)
+            c = c.concat("," + item)
         }
     }
     else {
         c = item
     }
-    console.log(item)
     document.getElementById('contents').value = c
 }
 
