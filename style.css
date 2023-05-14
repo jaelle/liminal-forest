@@ -79,3 +79,12 @@
     top: 450px;
     left: 285px;
 }
+
+#inventoryContents {
+    display: none;
+    top: 320px; 
+    left: 120px; 
+    position: absolute;
+    font-family: Papyrus, fantasy;
+    font-size: 48;
+}
